@@ -159,6 +159,3 @@ villager:talk()
 
 -- Remove an item from inventory
 playerInventory:removeItem("Seeds")
-
--- List inventory items again
-playerInventory:listItems()
