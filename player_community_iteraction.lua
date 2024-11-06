@@ -2,15 +2,6 @@
 Item = {}
 Item.__index = Item
 
-function Item:new(name, description)
-    local instance = {
-        name = name,
-        description = description
-    }
-    setmetatable(instance, Item)
-    return instance
-end
-
 -- Define the Inventory class
 Inventory = {}
 Inventory.__index = Inventory
@@ -80,24 +71,6 @@ function Quest:checkCompletion()
     return true
 end
 
--- Define the Task class
-Task = {}
-Task.__index = Task
-
-function Task:new(name)
-    local instance = {
-        name = name,
-        completed = false
-    }
-    setmetatable(instance, Task)
-    return instance
-end
-
-function Task:complete()
-    self.completed = true
-    print("Task '" .. self.name .. "' completed!")
-end
-
 -- Define the NPC class
 NPC = {}
 NPC.__index = NPC
@@ -159,3 +132,6 @@ villager:talk()
 
 -- Remove an item from inventory
 playerInventory:removeItem("Seeds")
+
+-- List inventory items again
+playerInventory:listItems()
